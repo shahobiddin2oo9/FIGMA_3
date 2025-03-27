@@ -1,0 +1,23 @@
+@mixin display($d-flex, $a--i-center, $juc-con-center, $gap) {
+  display: $d-flex;
+  align-items: $a--i-center;
+  justify-content: $juc-con-center;
+  gap: $gap;
+}
+@mixin font($size, $line-hieght, $weigt) {
+  font-size: $size;
+  line-height: $line-hieght;
+  font-weight: $weigt;
+}
+@mixin width--and--height($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin border($border, $radus) {
+  border: $border;
+  border-radius: $radus;
+}
+@mixin pd--mg($padding, $margin) {
+  padding: $padding;
+  margin: $margin;
+}

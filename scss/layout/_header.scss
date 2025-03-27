@@ -1,0 +1,234 @@
+@use "../utils/mixin" as mxn;
+@use "../utils/variables" as var;
+header {
+  box-shadow: 2px 4px 8px 0px #0000001a;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  @include mxn.pd--mg(16px 0, 0);
+  background-color: var.$bg--white;
+  .hero--section {
+    @include mxn.display(flex, center, space-between, 0);
+    .logo {
+      @include mxn.display(flex, center, space-between, 22px);
+      .Северяночка {
+        @include mxn.font(18px, 20px, 800);
+        color: var.$bg--black;
+        @media (max-width: 970px) {
+          & {
+            display: none;
+          }
+        }
+      }
+      max-width: 722px;
+      .button--katolog {
+        @include mxn.display(flex, center, space-between, 8px);
+        @include mxn.pd--mg(8px, 0);
+        background-color: var.$bg--green;
+        @include mxn.border(none, 4px);
+        @media (max-width: 777px) {
+          display: none;
+        }
+        a {
+          @include mxn.font(16px, 150%, 400);
+          text-align: center;
+          @include mxn.pd--mg(0 9px, 0);
+          color: var.$bg--white;
+          @media (max-width: 970px) {
+            display: none;
+          }
+        }
+        transition: all 0.9s ease-in-out;
+        &:hover {
+          box-shadow: inset 290px 0px 4px;
+          cursor: pointer;
+        }
+      }
+    }
+    .menu--pg {
+      @include mxn.display(flex, center, center, 24px);
+      @media (max-width: 1205px) {
+        gap: 18px;
+      }
+      @media (max-width: 691px) {
+        display: none;
+      }
+      .love {
+        img {
+          @include mxn.display(flex, center, 0, 24px);
+          @include mxn.width--and--height(26px, 26px);
+          margin: 0 auto;
+          @media (max-width: 691px) {
+            & {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+        p {
+          color: var.$bg--black;
+        }
+      }
+      .zakas {
+        img {
+          @include mxn.display(flex, center, 0, 24px);
+          @include mxn.width--and--height(26px, 26px);
+          margin: 0 auto;
+          @media (max-width: 691px) {
+            & {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+        p {
+          color: var.$bg--black;
+        }
+      }
+      .karzinka {
+        position: relative;
+        img {
+          @include mxn.display(flex, center, 0, 24px);
+          @include mxn.width--and--height(26px, 26px);
+          margin: 0 auto;
+          @media (max-width: 691px) {
+            & {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+        span {
+          position: absolute;
+          top: -5px;
+          right: 20px;
+          width: 11px;
+          text-decoration: double;
+          font-size: 10px;
+          border-radius: 10px;
+          text-align: center;
+          color: var.$bg--white;
+          background-color: var.$bg--origin;
+        }
+        p {
+          color: var.$bg--black;
+        }
+      }
+      .btn {
+        @include mxn.display(flex, center, space-between, 20px);
+        .sigin--pg {
+          display: block !important;
+        }
+        p {
+          @media (max-width: 1085px) {
+            display: none;
+          }
+        }
+        img {
+          @media (max-width: 1085px) {
+            display: none;
+          }
+        }
+      }
+    }
+    .menu--pg1 {
+      @include mxn.display(none, center, center, 24px);
+      @media (max-width: 1205px) {
+        gap: 18px;
+      }
+      .button--katolog {
+        @include mxn.pd--mg(8px, 0);
+        background-color: var.$bg--green;
+        @include mxn.border(none, 4px);
+        display: none;
+        @media (max-width: 777px) {
+          display: block;
+        }
+        transition: all 0.9s ease-in-out;
+        &:hover {
+          box-shadow: inset 290px 0px 4px;
+          cursor: pointer;
+        }
+      }
+      .tooltip-container {
+        .text {
+          img {
+            @include mxn.display(flex, center, 0, 24px);
+            @include mxn.width--and--height(26px, 26px);
+            margin: 0 auto;
+            @media (max-width: 691px) {
+              & {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
+          p {
+            color: var.$bg--black;
+            font-size: 12px;
+          }
+        }
+      }
+      .tooltip-container {
+        img {
+          @include mxn.display(flex, center, 0, 24px);
+          @include mxn.width--and--height(26px, 26px);
+          margin: 0 auto;
+          @media (max-width: 691px) {
+            & {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+        p {
+          color: var.$bg--black;
+        }
+      }
+      .karzinka {
+        position: relative;
+        img {
+          @include mxn.display(flex, center, 0, 24px);
+          @include mxn.width--and--height(26px, 26px);
+          margin: 0 auto;
+          @media (max-width: 691px) {
+            & {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+        span {
+          position: absolute;
+          top: -5px;
+          right: 20px;
+          width: 11px;
+          text-decoration: double;
+          font-size: 10px;
+          border-radius: 10px;
+          text-align: center;
+          color: var.$bg--white;
+          background-color: var.$bg--origin;
+        }
+        p {
+          color: var.$bg--black;
+        }
+      }
+      @media (max-width: 691px) {
+        @include mxn.display(flex, center, space-between, 0px);
+        background-color: var.$bg--white;
+        padding: 5px 20px;
+        position: fixed;
+        margin: 0 auto;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 90%;
+        a {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

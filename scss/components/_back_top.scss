@@ -1,0 +1,18 @@
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 10;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+#backToTop:hover {
+  background: #0056b3;
+  opacity: 10;
+}
