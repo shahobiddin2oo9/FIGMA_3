@@ -23,11 +23,11 @@ header {
       }
       max-width: 722px;
       .button--katolog {
-        @include mxn.display(flex, center, space-between, 8px);
+        @include mxn.display(flex, center, space-between, 24px);
         @include mxn.pd--mg(8px, 0);
         background-color: var.$bg--green;
         @include mxn.border(none, 4px);
-        @media (max-width: 777px) {
+        @media (max-width: 691px) {
           display: none;
         }
         a {

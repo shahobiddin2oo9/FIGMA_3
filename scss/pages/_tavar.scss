@@ -1,0 +1,228 @@
+@use "../utils/mixin" as mxn;
+@use "../utils/variables" as var;
+%d-fex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu--text {
+  .nav-a--text {
+    display: flex;
+    align-items: center;
+    margin-top: 37px;
+    gap: 16px;
+    overflow-x: auto;
+    max-width: 1000px;
+    a {
+      @include mxn.font(400, 16px, 24px);
+      color: #414141;
+      &:nth-child(1) {
+        width: 46px;
+      }
+      &:nth-child(2) {
+        width: 46px;
+      }
+      &:nth-child(3) {
+        width: 125px;
+      }
+      &:nth-child(4) {
+        width: 735px;
+      }
+    }
+  }
+  h1 {
+    font-family: Rubik;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    margin-top: 24px;
+  }
+  .hed--nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 556px;
+    margin-top: 24px;
+    overflow-x: auto;
+
+    a {
+      @include mxn.font(400, 16px, 24px);
+      color: #414141;
+      text-decoration: none;
+    }
+    .shere {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .love--tavar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+  }
+}
+.main--cards {
+  margin: 24px 0 120px;
+  .two_img {
+    display: flex;
+    gap: 40px;
+    .one_img {
+      display: flex;
+      .one--img {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        img {
+          width: 100%;
+        }
+      }
+      .two--img {
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .two_imgImg {
+      @media (max-width: 620px) {
+        margin: 0 auto;
+      }
+      .one--card--about {
+        .prise {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          p {
+            color: #606060;
+            font-family: Rubik;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            vertical-align: middle;
+          }
+          h2 {
+            font-family: Rubik;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            color: #414141;
+          }
+        }
+        .a--two-information {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          a {
+            font-family: Rubik;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            color: #bfbfbf;
+          }
+          .a--two-information-two-a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            img {
+              width: 24px;
+              height: 24px;
+            }
+          }
+        }
+        button {
+          width: 436px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 14px 16px;
+          background-color: #ff6633;
+          border: none;
+          border-radius: 4px;
+          margin-top: 16px;
+          @media (max-width: 459px) {
+            width: 400px;
+          }
+          @media (max-width: 420px) {
+            width: 300px;
+          }
+          @media (max-width: 326px) {
+            width: 250px;
+          }
+          a {
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 150%;
+            color: var.$bg--white;
+            margin: 0 auto;
+          }
+        }
+        .img_brend {
+          display: flex;
+          margin: 0 auto;
+        }
+        .form--menu {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          a {
+            font-family: Rubik;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: 0%;
+            color: #414141;
+          }
+          .one_form {
+            @extend %d-fex;
+            background-color: #f3f2f1;
+            padding: 10px;
+            border-radius: 12px;
+          }
+          .two_form {
+            @extend %d-fex;
+            padding: 10px;
+            border-radius: 12px;
+          }
+          .three_form {
+            @extend %d-fex;
+            background-color: #f3f2f1;
+            padding: 10px;
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+    .two--card--about-img {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      overflow-x: auto;
+      .two--card--about-img--card {
+        background-color: var.$bg--white;
+        border-radius: 4px;
+        p {
+          font-family: Rubik;
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 150%;
+          color: #414141;
+          padding: 10px 0 0 10px;
+        }
+      }
+      @media (max-width: 1215px) {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    @media (max-width: 1215px) {
+      flex-wrap: wrap;
+    }
+  }
+}
