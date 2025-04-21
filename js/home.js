@@ -165,20 +165,17 @@ function getNewsCard(news) {
 }
 
 products
-  .sort((a, b) => b.discount - a.discount)
-  .slice(0, 4)
+  .filter((a) => a.discount > 0)
+  .slice(-4)
   .map((item) => {
     const card = getCard(item, "aksiya", "salom");
     cardElements.append(card);
   });
 
-products
-  .sort((a, b) => b.price - a.price)
-  .slice(0, 4)
-  .map((item) => {
-    const card = getCard(item, "dw", "dsa");
-    cards_1.append(card);
-  });
+products.slice(-4).map((item) => {
+  const card = getCard(item, "dw", "dsa");
+  cards_1.append(card);
+});
 
 products
   .sort((a, b) => a.rating - b.rating)
