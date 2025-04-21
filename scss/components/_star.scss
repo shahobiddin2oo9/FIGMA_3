@@ -1,85 +1,18 @@
+
 .rating {
-  display: flex;
-  justify-content: start;
-  flex-direction: row-reverse;
-  gap: 0.3rem;
-  --stroke: #737373;
-  --fill: #ff6633;
+  display: flex; /* Flex modelini qo'llash */
+  justify-content: flex-start; /* Yulduzlarni chapdan joylash */
+  gap: 5px; /* Yulduzlar orasida bo'shliq */
 }
 
-.rating input {
-  appearance: unset;
+/* Boshlang'ich yulduzning rangi */
+.rating span {
+  font-size: 24px; /* Yulduzning o'lchami */
+  color: gray; /* Boshlang'ich rang */
+  cursor: pointer; /* Mouse kursorini pointer qilib qo'yish */
 }
 
-.rating label {
-  cursor: pointer;
-}
-
-.rating svg {
-  width: 1rem;
-  height: 1rem;
-  overflow: visible;
-  fill: transparent;
-  stroke: var(--stroke);
-  stroke-linejoin: bevel;
-  stroke-dasharray: 12;
-  animation: idle 4s linear infinite;
-  transition: stroke 0.2s, fill 0.5s;
-}
-
-@keyframes idle {
-  from {
-    stroke-dashoffset: 24;
-  }
-}
-
-.rating label:hover svg {
-  stroke: var(--fill);
-}
-
-.rating input:checked ~ label svg {
-  transition: 0s;
-  animation: idle 4s linear infinite, yippee 0.75s backwards;
-  fill: var(--fill);
-  stroke: var(--fill);
-  stroke-opacity: 0;
-  stroke-dasharray: 0;
-  stroke-linejoin: miter;
-  stroke-width: 18px;
-}
-
-@keyframes yippee {
-  0% {
-    transform: scale(1);
-    fill: var(--fill);
-    fill-opacity: 0;
-    stroke-opacity: 1;
-    stroke: var(--stroke);
-    stroke-dasharray: 10;
-    stroke-width: 1px;
-    stroke-linejoin: bevel;
-  }
-
-  30% {
-    transform: scale(0);
-    fill: var(--fill);
-    fill-opacity: 0;
-    stroke-opacity: 1;
-    stroke: var(--stroke);
-    stroke-dasharray: 10;
-    stroke-width: 1px;
-    stroke-linejoin: bevel;
-  }
-
-  30.1% {
-    stroke: var(--fill);
-    stroke-dasharray: 0;
-    stroke-linejoin: miter;
-    stroke-width: 6px;
-  }
-
-  60% {
-    transform: scale(1.2);
-    fill: var(--fill);
-  }
+/* Faol yulduzlar uchun */
+.rating span.active {
+  color: gold; /* Faol yulduzlar uchun oltin rang */
 }

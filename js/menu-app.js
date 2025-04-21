@@ -1,20 +1,35 @@
-let checkbox = document.querySelector(
-  ".button--katolog input[type='checkbox']"
-);
-let burgerIcon = document.querySelector(".burger-icon--menu");
+document.addEventListener("DOMContentLoaded", () => {
+  const toggles = document.querySelectorAll(".hamburger-btn");
+  const menu = document.querySelector(".burger-icon--menu");
+  const closeBtn = document.querySelector(".close-btn");
 
-checkbox.addEventListener("change", function () {
-  if (checkbox.checked) {
-    burgerIcon.classList.add("active");
-  } else {
-    burgerIcon.classList.remove("active");
-  }
-});
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      toggles.forEach((btn) => btn.classList.toggle("active")); // barcha tugmalarga
+      menu.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    });
+  });
 
-let link = document.querySelector(".burger-icon--menu a");
-link.addEventListener("click", function (event) {
-  if (checkbox.checked) {
-    checkbox.checked = false;
-    burgerIcon.classList.remove("active");
-  }
+  closeBtn.addEventListener("click", () => {
+    toggles.forEach((btn) => btn.classList.remove("active"));
+    menu.classList.remove("active");
+    document.body.classList.remove("menu-open");
+  });
+
+  menu.addEventListener("click", (e) => {
+    if (e.target === menu) {
+      toggles.forEach((btn) => btn.classList.remove("active"));
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && menu.classList.contains("active")) {
+      toggles.forEach((btn) => btn.classList.remove("active"));
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    }
+  });
 });

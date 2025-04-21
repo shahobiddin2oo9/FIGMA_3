@@ -1,25 +1,21 @@
-let backToTop = document.getElementById("backToTop");
-let header = document.getElementById("header");
+document.addEventListener("DOMContentLoaded", function () {
+  const allStars = document.querySelectorAll(".rating input");
 
-window.addEventListener("scroll", function () {
-  if (window.scrollY > 50) {
-    header.style.padding = "20px 0";
-  } else {
-    header.style.padding = "40px 0";
-  }
+  allStars.forEach((star) => {
+    star.addEventListener("change", function () {
+      const cardRating = star
+        .closest(".card")
+        .querySelectorAll(".rating input");
 
-  if (window.scrollY > 300) {
-    backToTop.style.opacity = "1";
-    backToTop.style.visibility = "visible";
-  } else {
-    backToTop.style.opacity = "0";
-    backToTop.style.visibility = "hidden";
-  }
-});
+      const index = [...cardRating].indexOf(star);
 
-backToTop.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+      cardRating.forEach((s, i) => {
+        if (i <= index) {
+          s.checked = true; // Active holatni belgilaymiz
+        } else {
+          s.checked = false; // Boshqa yulduzlarni tozalaymiz
+        }
+      });
+    });
   });
 });

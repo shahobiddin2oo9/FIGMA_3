@@ -78,20 +78,19 @@ main {
         flex: 0 0 272px;
         scroll-snap-align: start;
         background-color: var.$bg--white;
-        overflow: hidden;
         border-radius: 4px;
         box-shadow: 1px 2px 4px 0px #0000001a;
         transition: all ease-in-out 0.4s;
 
         .card--body {
           position: relative;
-
+          overflow: hidden;
+          height: 160px;
           img {
             @include mxn.width--and--height(272px, 160px);
             transition: all ease-in-out 0.4s;
-
             &:hover {
-              transform: scale(0.9);
+              transform: scale(1.04);
               cursor: pointer;
             }
           }
@@ -116,9 +115,9 @@ main {
             position: absolute;
             top: 10px;
             right: 20px;
-            padding: 8px 1px 10px 25px;
+            padding: 1px 4px 8px;
             border-radius: 4px;
-            background-color: #e8e5e5e1;
+            background-color: #07990c;
             opacity: 0;
             transform: translateY(-20px);
             transition: opacity 0.3s ease, transform 0.3s ease;

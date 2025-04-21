@@ -41,7 +41,7 @@ header {
         }
         transition: all 0.9s ease-in-out;
         &:hover {
-          box-shadow: inset 290px 0px 4px;
+          background-color: rgb(27, 83, 0);
           cursor: pointer;
         }
       }
@@ -147,7 +147,6 @@ header {
         }
         transition: all 0.9s ease-in-out;
         &:hover {
-          box-shadow: inset 290px 0px 4px;
           cursor: pointer;
         }
       }
