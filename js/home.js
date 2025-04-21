@@ -181,7 +181,7 @@ products
   });
 
 products
-  .sort((a, b) => b.discount - a.discount)
+  .sort((a, b) => b.rating - a.rating)
   .slice(0, 4)
   .map((item) => {
     const card = getCard(item, "dw", "ds");
