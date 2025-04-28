@@ -1,27 +1,27 @@
 let product = [
   {
     id: 1,
-    text: "Молоко, сыр, яйцо",
+    text: "Sut, pishloq, tuxum",
     img: "../img/katolog/egg.svg",
   },
   {
     id: 2,
-    text: "Хлеб",
+    text: "Non",
     img: "../img/katolog/brend.svg",
   },
   {
     id: 3,
-    text: "Фрукты и овощи",
+    text: "Meva va sabzavotlar",
     img: "../img/katolog/vagetables.svg",
   },
   {
     id: 4,
-    text: "Фрукты и овощи",
+    text: "Meva va sabzavotlar",
     img: "../img/katolog/img (4).svg",
   },
   {
     id: 5,
-    text: "Молоко, сыр, яйцо",
+    text: "ichimliklar",
     img: "../img/katolog/img (5).svg",
   },
   {
@@ -31,37 +31,37 @@ let product = [
   },
   {
     id: 7,
-    text: "Кондитерские изделия",
+    text: "Qandolat mahsulotlari",
     img: "../img/katolog/img (7).svg",
   },
   {
     id: 8,
-    text: "Чай, кофе",
+    text: "choy kofe",
     img: "../img/katolog/img (8).svg",
   },
   {
     id: 9,
-    text: "Бакалея",
+    text: "sabzavot va go'sht ",
     img: "../img/katolog/img (9).svg",
   },
   {
     id: 10,
-    text: "Здоровое питание",
+    text: "hayvonlar",
     img: "../img/katolog/img (10).svg",
   },
   {
     id: 11,
-    text: "Здоровое питание",
+    text: "baby",
     img: "../img/katolog/img (11).svg",
   },
   {
     id: 12,
-    text: "Детское питание",
+    text: "kalbasa",
     img: "../img/katolog/img (12).svg",
   },
   {
     id: 13,
-    text: "Мясо, птица, колбаса",
+    text: "servises",
     img: "../img/katolog/img (13).svg",
   },
 ];
@@ -643,19 +643,7 @@ let products = [
     ],
   },
 ];
-// let ChildPro = [
-//   {
-//     id: 1,
-//     h1_text: "Оформите карту «Северяночка»",
-//     p_text: "И получайте бонусы при покупке в магазинах и на сайте",
-//     img: "./img/home/carta.svg",
-//   },
-//   {
-//     h1_text: "Покупайте акционные товары ",
-//     p_text: "И получайте бонусы при покупке в магазинах и на сайте",
-//     img: "../img/home/73 1.png",
-//   },
-// ];
+
 let asideCards = [
   {
     id: 1,

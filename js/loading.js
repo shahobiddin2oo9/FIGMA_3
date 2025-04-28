@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
-    document.querySelector(".loading-screen").classList.add("hidden");
+    document.querySelector(".loading").classList.add("hidden");
   }, 3000);
 });
