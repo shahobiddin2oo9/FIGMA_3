@@ -1,0 +1,8 @@
+@use "../utils/mixin" as mxn;
+@use "../utils/variables" as var;
+main {
+  .Корзина {
+    @include mxn.font(64px, 150%, 700);
+    color: var.$bg--black;
+  }
+}

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggles.forEach((toggle) => {
     toggle.addEventListener("click", () => {
-      toggles.forEach((btn) => btn.classList.toggle("active")); 
+      toggles.forEach((btn) => btn.classList.toggle("active"));
       menu.classList.toggle("active");
       document.body.classList.toggle("menu-open");
     });

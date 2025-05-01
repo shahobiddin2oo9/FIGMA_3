@@ -643,7 +643,21 @@ let products = [
     ],
   },
 ];
-
+let menu_a = [
+  { id: 1, text: "Sut, pishloq, tuxum" },
+  { id: 2, text: "Non" },
+  { id: 3, text: "Meva va sabzavotlar" },
+  { id: 4, text: "Meva va sabzavotlar" },
+  { id: 5, text: "ichimliklar" },
+  { id: 6, text: "Напитки" },
+  { id: 7, text: "Qandolat mahsulotlari" },
+  { id: 8, text: "choy kofe" },
+  { id: 9, text: "sabzavot va go'sht " },
+  { id: 10, text: "hayvonlar" },
+  { id: 11, text: "baby" },
+  { id: 12, text: "kalbasa" },
+  { id: 13, text: "servises" },
+];
 let asideCards = [
   {
     id: 1,

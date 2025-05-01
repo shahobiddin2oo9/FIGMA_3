@@ -561,7 +561,6 @@ input:not(:placeholder-shown) ~ .reset {
   margin-top: 3px;
 }
 
-/* Hide the default checkbox */
 .containe1r input {
   position: absolute;
   opacity: 0;
@@ -1950,4 +1949,11 @@ button {
   .main--cards .two_img {
     flex-wrap: wrap;
   }
+}
+
+main .Корзина {
+  font-size: 64px;
+  line-height: 150%;
+  font-weight: 700;
+  color: #000000;
 }
