@@ -19,19 +19,35 @@ function katalog_(el) {
 
 function getData(data = product) {
   katalog.innerHTML = "";
-  data.forEach((el) => {
-    let div = katalog_(el);
-    katalog.append(div);
-  });
+  if (data.length == 0) {
+    img = document.createElement("img");
+    img.className = "dataNO";
+    console.log(img);
+    img.src = "../img/home/7Fmb.gif";
+    img.style = `background: linear-gradient(to right, red, yellow); padding: 20px; display: inline-block;border-radius: 10px;`;
+    parageph = document.createElement("p");
+    parageph.innerText = "Biz siz qidirayotgan narsani topa olmadik";
+    span = document.createElement("span");
+    span.innerText =
+      "Mahsulot nomida xatolik yoki bizda hali bunday mahsulot boʻlmasligi mumkin";
+    span.style = `color: red; font-size: 20px;`;
+    katalog.append(img, parageph, span);
+    product_discount.innerText = data.length;
+  } else {
+    data.forEach((el) => {
+      let div = katalog_(el);
+      katalog.append(div);
+    });
+  }
+
   product_discount.innerText = data.length;
 }
 
-getData(product);
+getData();
 
 input.addEventListener("input", function () {
   let search = this.value.toLowerCase().trim();
   console.log(search);
-
   let searchProducts = product.filter((item) =>
     item.text.toLowerCase().includes(search)
   );

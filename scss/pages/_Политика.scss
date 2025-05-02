@@ -1,0 +1,143 @@
+@use "../utils/mixin" as mxn;
+@use "../utils/variables" as var;
+.Политика {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  &::-webkit-scrollbar {
+    height: 1px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #faf7eb;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #faf7eb;
+  }
+
+  .card {
+    flex: 0 0 272px;
+    scroll-snap-align: start;
+    background-color: var.$bg--white;
+    border-radius: 4px;
+    box-shadow: 1px 2px 4px 0px #0000001a;
+    transition: all ease-in-out 0.4s;
+
+    .card--body {
+      position: relative;
+      overflow: hidden;
+      height: 160px;
+      img {
+        @include mxn.width--and--height(100%, 160px);
+        transition: all ease-in-out 0.4s;
+        &:hover {
+          transform: scale(1.04);
+          cursor: pointer;
+        }
+      }
+
+      .discount {
+        position: absolute;
+        z-index: 1;
+        left: 10px;
+        bottom: 0px;
+        border-radius: 4px;
+        color: var.$bg--color;
+        padding: 4px 8px;
+        background-color: var.$bg--origin;
+        text-align: center;
+        @include mxn.font(16px, 150%, 400);
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+
+      .love {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        padding: 1px 4px 8px;
+        border-radius: 4px;
+        background-color: #07990c;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        .con-like {
+          margin: 0 auto;
+        }
+      }
+    }
+    .card-footer {
+      padding: 12px;
+      width: 250px;
+      .card--footer_prise {
+        @include mxn.display(flex, center, space-between, 0);
+
+        h6 {
+          @include mxn.font(18px, 150%, 700);
+        }
+        p {
+          @include mxn.font(16px, 150%, 400);
+        }
+      }
+
+      .two_span {
+        @include mxn.display(flex, center, space-between, 0);
+        padding: 8px 0;
+
+        span {
+          @include mxn.font(12px, 150%, 400);
+          color: var.$bg--grey;
+        }
+      }
+
+      p {
+        @include mxn.font(16px, 150%, 400);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      button {
+        width: 100%;
+        @include mxn.pd--mg(8px 0, 8px 0 0 0);
+        @include mxn.border(1px solid var.$bg--green, 4px);
+        background-color: var.$bg--white;
+        transition: all 0.6s ease-in-out;
+
+        &:hover {
+          background-color: var.$bg--origin;
+          box-shadow: inset 290px 0 10px;
+        }
+
+        a {
+          color: var.$bg--green;
+          @include mxn.font(16px, 150%, 400);
+          text-align: center;
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 4px 8px 16px 0px #ff663333;
+      cursor: pointer;
+
+      .discount {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .love {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

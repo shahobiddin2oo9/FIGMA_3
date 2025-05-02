@@ -5,4 +5,99 @@ main {
     @include mxn.font(64px, 150%, 700);
     color: var.$bg--black;
   }
+  .karzinkaTap {
+    display: flex;
+    align-items: center;
+    .twoBtnaa {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      a {
+        @include mxn.font(12px, 150%, 400);
+      }
+      .twoBtn_a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        a {
+          color: #606060;
+        }
+      }
+      a {
+        color: #ff6633;
+      }
+    }
+  }
+  .karzinka_cards {
+    margin-top: 24px;
+    .karzinka_card_one {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 876px;
+      background-color: var.$bg--white;
+      border-radius: 4px;
+      padding: 0px 12px 8px 0px;
+      .karzinka_card_one_pg {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        .karzinka_card_one_img {
+          position: relative;
+          .karzinka_card_one_img_check {
+            position: absolute;
+            top: -5px;
+            left: 13px;
+            transform: scale(1.6);
+            cursor: pointer;
+          }
+
+          img {
+            width: 80px;
+            height: 80px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 1px 2px 4px 0px #0000000c;
+            border-radius: 4px;
+            &:hover {
+              box-shadow: 1px 2px 4px 0px #0000001a;
+            }
+          }
+        }
+        .karzinka_card_one__a {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+      .inc__dec_prise {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        .inc_dec {
+          background-color: var.$bg--green;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 8px;
+          border-radius: 4px;
+          button {
+            width: 24px;
+            font-size: 24px;
+            background-color: var.$bg--green;
+          }
+          span {
+            color: var.$bg--white;
+          }
+        }
+        a {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 150%;
+          color: var.$bg--black;
+        }
+      }
+    }
+  }
 }

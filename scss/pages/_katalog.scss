@@ -21,6 +21,7 @@
   .katalog {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    align-items: center;
     gap: 30px;
 
     img {
@@ -221,7 +222,10 @@ button {
     animation: fadeInRight 0.5s ease;
   }
 }
-
+.dataNO {
+  width: 200px !important;
+  height: 300px !important;
+}
 .burger-icon--menu {
   display: none;
   background-color: white;

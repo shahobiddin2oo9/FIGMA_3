@@ -1341,6 +1341,7 @@ main aside .aside--cards .aside-sdaasds .aside-card:hover {
 .Katalog .katalog {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: center;
   gap: 30px;
 }
 .Katalog .katalog img {
@@ -1495,6 +1496,11 @@ button {
   opacity: 1;
   transform: scale(1);
   animation: fadeInRight 0.5s ease;
+}
+
+.dataNO {
+  width: 200px !important;
+  height: 300px !important;
 }
 
 .burger-icon--menu {
@@ -1951,9 +1957,254 @@ button {
   }
 }
 
+.Политика {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  overflow-x: auto;
+  gap: 16px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  margin-top: 40px;
+}
+.Политика::-webkit-scrollbar {
+  height: 1px;
+}
+.Политика::-webkit-scrollbar-thumb {
+  background-color: #faf7eb;
+  border-radius: 10px;
+}
+.Политика::-webkit-scrollbar-track {
+  background-color: #faf7eb;
+}
+.Политика .card {
+  flex: 0 0 272px;
+  scroll-snap-align: start;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.1019607843);
+  transition: all ease-in-out 0.4s;
+}
+.Политика .card .card--body {
+  position: relative;
+  overflow: hidden;
+  height: 160px;
+}
+.Политика .card .card--body img {
+  width: 100%;
+  height: 160px;
+  transition: all ease-in-out 0.4s;
+}
+.Политика .card .card--body img:hover {
+  transform: scale(1.04);
+  cursor: pointer;
+}
+.Политика .card .card--body .discount {
+  position: absolute;
+  z-index: 1;
+  left: 10px;
+  bottom: 0px;
+  border-radius: 4px;
+  color: #faf7eb;
+  padding: 4px 8px;
+  background-color: #ff6633;
+  text-align: center;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.Политика .card .card--body .love {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 1px 4px 8px;
+  border-radius: 4px;
+  background-color: #07990c;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.Политика .card .card--body .love .con-like {
+  margin: 0 auto;
+}
+.Политика .card .card-footer {
+  padding: 12px;
+  width: 250px;
+}
+.Политика .card .card-footer .card--footer_prise {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+.Политика .card .card-footer .card--footer_prise h6 {
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 700;
+}
+.Политика .card .card-footer .card--footer_prise p {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+}
+.Политика .card .card-footer .two_span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  padding: 8px 0;
+}
+.Политика .card .card-footer .two_span span {
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 400;
+  color: #606060;
+}
+.Политика .card .card-footer p {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.Политика .card .card-footer button {
+  width: 100%;
+  padding: 8px 0;
+  margin: 8px 0 0 0;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.6s ease-in-out;
+}
+.Политика .card .card-footer button:hover {
+  background-color: #ff6633;
+  box-shadow: inset 290px 0 10px;
+}
+.Политика .card .card-footer button a {
+  color: #70c05b;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 400;
+  text-align: center;
+}
+.Политика .card:hover {
+  box-shadow: 4px 8px 16px 0px rgba(255, 102, 51, 0.2);
+  cursor: pointer;
+}
+.Политика .card:hover .discount {
+  opacity: 1;
+  transform: translateY(0);
+}
+.Политика .card:hover .love {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 main .Корзина {
   font-size: 64px;
   line-height: 150%;
   font-weight: 700;
+  color: #000000;
+}
+main .karzinkaTap {
+  display: flex;
+  align-items: center;
+}
+main .karzinkaTap .twoBtnaa {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+main .karzinkaTap .twoBtnaa a {
+  font-size: 12px;
+  line-height: 150%;
+  font-weight: 400;
+}
+main .karzinkaTap .twoBtnaa .twoBtn_a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .karzinkaTap .twoBtnaa .twoBtn_a a {
+  color: #606060;
+}
+main .karzinkaTap .twoBtnaa a {
+  color: #ff6633;
+}
+main .karzinka_cards {
+  margin-top: 24px;
+}
+main .karzinka_cards .karzinka_card_one {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 876px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 0px 12px 8px 0px;
+}
+main .karzinka_cards .karzinka_card_one .karzinka_card_one_pg {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+main .karzinka_cards .karzinka_card_one .karzinka_card_one_pg .karzinka_card_one_img {
+  position: relative;
+}
+main .karzinka_cards .karzinka_card_one .karzinka_card_one_pg .karzinka_card_one_img .karzinka_card_one_img_check {
+  position: absolute;
+  top: -5px;
+  left: 13px;
+  transform: scale(1.6);
+  cursor: pointer;
+}
+main .karzinka_cards .karzinka_card_one .karzinka_card_one_pg .karzinka_card_one_img img {
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.0470588235);
+  border-radius: 4px;
+}
+main .karzinka_cards .karzinka_card_one .karzinka_card_one_pg .karzinka_card_one_img img:hover {
+  box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.1019607843);
+}
+main .karzinka_cards .karzinka_card_one .karzinka_card_one_pg .karzinka_card_one__a {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .karzinka_cards .karzinka_card_one .inc__dec_prise {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+main .karzinka_cards .karzinka_card_one .inc__dec_prise .inc_dec {
+  background-color: #70c05b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 4px;
+}
+main .karzinka_cards .karzinka_card_one .inc__dec_prise .inc_dec button {
+  width: 24px;
+  font-size: 24px;
+  background-color: #70c05b;
+}
+main .karzinka_cards .karzinka_card_one .inc__dec_prise .inc_dec span {
+  color: white;
+}
+main .karzinka_cards .karzinka_card_one .inc__dec_prise a {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
   color: #000000;
 }

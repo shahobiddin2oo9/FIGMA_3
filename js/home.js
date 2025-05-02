@@ -1,9 +1,15 @@
 let cardElements = document.querySelector(".cards");
 let cards_1 = document.querySelector(".cards-1");
 let cards_2 = document.querySelector(".card-2");
+let disCountsdasdas = document.querySelector(".dis-countsdasdas");
 let two_cardsssss = document.querySelector(".aside-sdaasds");
+let Политика = document.querySelector(".Политика");
 
-function getCard(item, type, prise) {
+function getCard(
+  { images, name, discount, id, price, description },
+  type,
+  dsaa
+) {
   let card = document.createElement("div");
   card.className = "card";
 
@@ -14,13 +20,13 @@ function getCard(item, type, prise) {
   body_a.href = "./tavar.html";
   body_a.target = "_blank";
   let body_a_img = document.createElement("img");
-  body_a_img.src = item.images[1];
-  body_a_img.alt = item.name;
+  body_a_img.src = images[1];
+  body_a_img.alt = name;
   body_a.append(body_a_img);
 
   let body_span = document.createElement("span");
   body_span.className = "discount";
-  body_span.innerHTML = `- ${item.discount} %`;
+  body_span.innerHTML = `- ${discount} %`;
 
   let body_love = document.createElement("div");
   body_love.className = "love";
@@ -29,7 +35,7 @@ function getCard(item, type, prise) {
 
   let body_love_con__like__input = document.createElement("input");
   body_love_con__like__input.type = "checkbox";
-  body_love_con__like__input.id = `heart${item.id}`;
+  body_love_con__like__input.id = `heart${id}`;
   body_love_con__like__input.className = "like";
 
   body_love_con__like__input.addEventListener("change", (e) => {
@@ -61,11 +67,11 @@ function getCard(item, type, prise) {
   footer_prise.className = "card--footer_prise";
 
   let footer_prise__h6 = document.createElement("h6");
-  footer_prise__h6.innerHTML = `${item.name}`;
+  footer_prise__h6.innerHTML = `${name}`;
 
-  if (prise === "salom") {
+  if (dsaa === "salom") {
     let footer_prise__p = document.createElement("p");
-    footer_prise__p.innerHTML = `${item.price} $`;
+    footer_prise__p.innerHTML = `${price} $`;
     footer_prise.append(footer_prise__h6, footer_prise__p);
   }
 
@@ -83,7 +89,7 @@ function getCard(item, type, prise) {
   }
 
   let footer_information__p = document.createElement("p");
-  footer_information__p.innerHTML = item.description;
+  footer_information__p.innerHTML = `${description}`;
 
   // yuldizcha
   let rating = document.createElement("div");
@@ -112,23 +118,16 @@ function getCard(item, type, prise) {
     rating.appendChild(star);
   }
   //
-  let a1 = document.createElement("a");
-  a1.href = "./karzinka.html";
-  a1.target = "_blank";
   let btn = document.createElement("button");
-  let a2 = document.createElement("a");
-  a2.href = "./karzinka.html";
-  a2.target = "_blank";
-  a2.textContent = "В корзину";
-  btn.appendChild(a2);
-  a1.appendChild(btn);
-
+  btn.textContent = "В корзину";
+  btn.style.color = "#70C05B";
+  btn.addEventListener("click", () => getCARDkarz(`${id}`));
   card__footer.append(
     footer_prise,
     footer_info,
     footer_information__p,
     rating,
-    a1
+    btn
   );
   card.append(card__body, card__footer);
 
@@ -188,3 +187,14 @@ asideCards.map((news) => {
   let card = getNewsCard(news);
   two_cardsssss.append(card);
 });
+
+function getCARDkarz(id) {
+  let pro = products.find((item) => item.id == id);
+  console.log(pro);
+}
+
+function getAddCard() {
+  let casrt = [0.3, 4, 5312];
+  disCountsdasdas.textContent = casrt.length;
+}
+getAddCard();
