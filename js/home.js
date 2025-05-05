@@ -1,15 +1,15 @@
 let cardElements = document.querySelector(".cards");
 let cards_1 = document.querySelector(".cards-1");
 let cards_2 = document.querySelector(".card-2");
-let disCountsdasdas = document.querySelector(".dis-countsdasdas");
 let two_cardsssss = document.querySelector(".aside-sdaasds");
-let Политика = document.querySelector(".Политика");
-
+let karzDsc = document.querySelectorAll(".dis-countsdasdas");
 function getCard(
   { images, name, discount, id, price, description },
   type,
   dsaa
 ) {
+  let checkBtn = karzCount.find((pro) => pro.id == id);
+
   let card = document.createElement("div");
   card.className = "card";
 
@@ -38,24 +38,33 @@ function getCard(
   body_love_con__like__input.id = `heart${id}`;
   body_love_con__like__input.className = "like";
 
+  // Laykni o'zgartirish
   body_love_con__like__input.addEventListener("change", (e) => {
     const heart = e.target.nextElementSibling;
     if (e.target.checked) {
       heart.style.color = "red";
+      localStorage.setItem(`heart${id}`, "liked");
     } else {
       heart.style.color = "gray";
+      localStorage.setItem(`heart${id}`, "unliked");
     }
   });
 
-  let body_love_con__like__label = document.createElement("label");
-  body_love_con__like__label.htmlFor = body_love_con__like__input.id;
-  body_love_con__like__label.className = "heart";
-  body_love_con__like__label.innerHTML = "❤";
+  const savedLikeStatus = localStorage.getItem(`heart${id}`);
+  const heartLabel = document.createElement("label");
+  heartLabel.htmlFor = body_love_con__like__input.id;
+  heartLabel.className = "heart";
+  heartLabel.innerHTML = "❤";
 
-  body_love_con__like.append(
-    body_love_con__like__input,
-    body_love_con__like__label
-  );
+  if (savedLikeStatus === "liked") {
+    heartLabel.style.color = "red";
+    body_love_con__like__input.checked = true;
+  } else {
+    heartLabel.style.color = "gray";
+  }
+
+  body_love_con__like.append(body_love_con__like__input, heartLabel);
+
   body_love.append(body_love_con__like);
   card__body.append(body_a, body_span, body_love);
 
@@ -111,17 +120,30 @@ function getCard(
       stars.forEach((s, index) => {
         s.style.color = index < i ? starColorActive : starColorInactive;
       });
+      localStorage.setItem(`rating-${id}`, i);
       alert(`Siz ${i} ta yulduzni tanladingiz`);
     });
 
     stars.push(star);
     rating.appendChild(star);
   }
+  const savedRating = parseInt(localStorage.getItem(`rating-${id}`), 10);
+  if (savedRating) {
+    stars.forEach((s, index) => {
+      s.style.color = index < savedRating ? starColorActive : starColorInactive;
+    });
+  }
   //
   let btn = document.createElement("button");
   btn.textContent = "В корзину";
-  btn.style.color = "#70C05B";
-  btn.addEventListener("click", () => getCARDkarz(`${id}`));
+  btn.onclick = () => adddToCard(`${id}`);
+  btn.className = `${checkBtn ? "check-btn" : ""}`;
+  btn.onclick = () => {
+    adddToCard(`${id}`);
+    btn.classList.add("check-btn");
+    btn.textContent = "Добавлено";
+  };
+
   card__footer.append(
     footer_prise,
     footer_info,
@@ -133,6 +155,33 @@ function getCard(
 
   return card;
 }
+
+let cardJSon = localStorage.getItem("cart");
+let karzCount = JSON.parse(cardJSon) || [];
+
+function getKarzCOunt() {
+  karzDsc.forEach((item) => (item.textContent = karzCount.length));
+}
+getKarzCOunt();
+
+function adddToCard(id) {
+  let prodct = products.find((pro) => pro.id == id);
+  let checkIn = karzCount.find((pro) => pro.id == id);
+  if (checkIn) {
+    karzCount = karzCount.map((pro) => {
+      if (pro.id == id) {
+        pro.quantity++;
+      }
+      return pro;
+    });
+  } else {
+    prodct.quantity = 1;
+    karzCount.push(prodct);
+  }
+  localStorage.setItem("cart", JSON.stringify(karzCount));
+  getKarzCOunt();
+}
+
 function getNewsCard(news) {
   let card = document.createElement("div");
   card.className = "aside-card";
@@ -163,38 +212,36 @@ function getNewsCard(news) {
   return card;
 }
 
-products
-  .filter((a) => a.discount > 0)
-  .slice(-4)
-  .map((item) => {
-    const card = getCard(item, "aksiya", "salom");
-    cardElements.append(card);
-  });
-
-products.slice(-4).map((item) => {
-  const card = getCard(item, "dw", "dsa");
-  cards_1.append(card);
-});
-
-products
-  .toSorted((a, b) => a.rating - b.rating)
-  .slice(0, 4)
-  .map((item) => {
-    const card = getCard(item, "dw", "ds");
-    cards_2.append(card);
-  });
-asideCards.map((news) => {
-  let card = getNewsCard(news);
-  two_cardsssss.append(card);
-});
-
-function getCARDkarz(id) {
-  let pro = products.find((item) => item.id == id);
-  console.log(pro);
+if (cardElements) {
+  products
+    .filter((a) => a.discount > 0)
+    .slice(-4)
+    .map((item) => {
+      const card = getCard(item, "aksiya", "salom");
+      cardElements.append(card);
+    });
 }
 
-function getAddCard() {
-  let casrt = [0.3, 4, 5312];
-  disCountsdasdas.textContent = casrt.length;
+if (cards_1) {
+  products.slice(-4).map((item) => {
+    const card = getCard(item, "dw", "dsa");
+    cards_1.append(card);
+  });
 }
-getAddCard();
+
+if (cards_2) {
+  products
+    .toSorted((a, b) => a.rating - b.rating)
+    .slice(0, 4)
+    .map((item) => {
+      const card = getCard(item, "dw", "ds");
+      cards_2.append(card);
+    });
+}
+
+if (two_cardsssss) {
+  asideCards.map((news) => {
+    let card = getNewsCard(news);
+    two_cardsssss.append(card);
+  });
+}

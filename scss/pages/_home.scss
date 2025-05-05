@@ -1,10 +1,11 @@
 @use "../utils/mixin" as mxn;
 @use "../utils/variables" as var;
 main {
-  margin-top: 90px;
+  margin-top: 78px;
   .here--section {
     position: relative;
     overflow: hidden;
+    background-color: var.$bg--color;
     &::before {
       content: "";
       position: absolute;
@@ -12,13 +13,15 @@ main {
       background-image: url(../../img/home/hero-section.svg);
       background-size: cover;
       animation: fon-qimirla 3s ease-in-out infinite;
-    }
+      background-blend-mode: darken;
+      background-color: #120e0e4b;
+     }
     @keyframes fon-qimirla {
       0% {
         transform: translateX(0);
       }
       50% {
-        transform: translateX(20px);
+        transform: translateX(10px);
       }
       100% {
         transform: translateX(0);
@@ -48,11 +51,12 @@ main {
       @include mxn.display(flex, center, space-between, 0);
       h1 {
         @include mxn.font(35px, 150%, 700);
+        color: var.$bg--white;
       }
       a {
         @include mxn.font(16px, 150%, 400);
         text-align: center;
-        color: var.$bg--grey;
+        color: var.$bg--white;
       }
     }
     .cards {
@@ -61,8 +65,17 @@ main {
       overflow-x: auto;
       gap: 16px;
       scroll-snap-type: x mandatory;
-      padding-bottom: 10px;
       margin-top: 40px;
+      background-color: var.$bg--color;
+      padding: 30px;
+      border: 5px solid;
+      border-image: linear-gradient(
+          90deg,
+          rgb(9, 255, 0),
+          transparent,
+          rgb(255, 0, 0)
+        )
+        1;
       &::-webkit-scrollbar {
         height: 1px;
       }
@@ -165,10 +178,10 @@ main {
             @include mxn.border(1px solid var.$bg--green, 4px);
             background-color: var.$bg--white;
             transition: all 0.6s ease-in-out;
-
+            color: var.$bg--green;
             &:hover {
               background-color: var.$bg--origin;
-              box-shadow: inset 290px 0 10px;
+              color: white;
             }
 
             a {
@@ -200,6 +213,7 @@ main {
     h1 {
       @include mxn.font(35px, 150%, 700);
       margin-bottom: 40px;
+      color: var.$bg--white;
       @media (max-width: 593px) {
         & {
           font-size: 24px;
@@ -291,6 +305,7 @@ main {
     margin: 120px 0;
     h1 {
       @include mxn.font(35px, 150%, 700);
+      color: var.$bg--white;
     }
     .ap-tab {
       .ap-tab-list {
@@ -321,12 +336,13 @@ main {
         margin-bottom: 40px;
         h1 {
           @include mxn.font(36px, 150%, 700);
+          color: var.$bg--white;
         }
         a {
           text-align: center;
           vertical-align: middle;
           @include mxn.font(16px, 150%, 400);
-          color: #606060;
+          color: var.$bg--white;
         }
       }
       .aside-sdaasds {

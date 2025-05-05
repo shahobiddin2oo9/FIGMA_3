@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       cardRating.forEach((s, i) => {
         if (i <= index) {
-          s.checked = true; // Active holatni belgilaymiz
+          s.checked = true;
         } else {
-          s.checked = false; // Boshqa yulduzlarni tozalaymiz
+          s.checked = false;
         }
       });
     });

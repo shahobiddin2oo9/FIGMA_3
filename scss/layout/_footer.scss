@@ -1,6 +1,7 @@
 @use "../utils/mixin" as mxn;
 @use "../utils/variables" as var;
 footer {
+  background-color: var.$bg--color;
   background-image: url(../../img/footer/footer--bg.svg);
   @include mxn.pd--mg(24px 0, 80px 0 0 0);
   .nav--footer {

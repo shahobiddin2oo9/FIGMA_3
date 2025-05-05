@@ -11,11 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  closeBtn.addEventListener("click", () => {
-    toggles.forEach((btn) => btn.classList.remove("active"));
-    menu.classList.remove("active");
-    document.body.classList.remove("menu-open");
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      toggles.forEach((btn) => btn.classList.remove("active"));
+      menu.classList.remove("active");
+      document.body.classList.remove("menu-open");
+    });
+  }
 
   menu.addEventListener("click", (e) => {
     if (e.target === menu) {

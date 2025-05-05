@@ -3,8 +3,10 @@
 .two-a {
   @include mxn.display(flex, center, 0, 20px);
   padding: 24px 0;
+  color: var.$bg--white;
+
   a {
-    color: var.$bg--black;
+    color: var.$bg--white;
     text-decoration: none;
     &:hover {
       color: var.$bg--grey;
@@ -16,7 +18,7 @@
     font-size: 64px;
     line-height: 150%;
     font-weight: 700;
-    color: #414141;
+    color: var.$bg--white;
   }
   .katalog {
     display: grid;

@@ -70,7 +70,8 @@ let products = [
     id: 1,
     name: "Apple",
     category: "Fruit",
-    description: "A round fruit with a red, green, or yellow ",
+    description:
+      "A round fruit with a red, green, or yellow  ,with a red, green, or yellow ",
     price: 89,
     rating: 5,
     discount: 0,

@@ -102,15 +102,18 @@ header {
         }
         span {
           position: absolute;
-          top: -5px;
-          right: 20px;
-          width: 11px;
+          top: -6px;
+          right: 5px;
+          z-index: -1;
+          width: 18px;
+          height: 15px;
           text-decoration: double;
-          font-size: 10px;
-          border-radius: 10px;
+          font-weight: bold;
+          font-size: 12px;
+          border-radius: 4px;
           text-align: center;
           color: var.$bg--white;
-          background-color: var.$bg--origin;
+          background-color: var.$bg--green;
         }
         p {
           color: var.$bg--black;
@@ -204,18 +207,7 @@ header {
             }
           }
         }
-        span {
-          position: absolute;
-          top: -5px;
-          right: 20px;
-          width: 11px;
-          text-decoration: double;
-          font-size: 10px;
-          border-radius: 10px;
-          text-align: center;
-          color: var.$bg--white;
-          background-color: var.$bg--origin;
-        }
+
         p {
           color: var.$bg--black;
         }
@@ -223,21 +215,41 @@ header {
       @media (max-width: 691px) {
         @include mxn.display(flex, center, space-between, 0px);
         background-color: var.$bg--white;
-        padding: 5px 20px;
+        padding: 5px 28px;
         position: fixed;
         margin: 0 auto;
         bottom: 0;
         right: 0;
         left: 0;
         width: 90%;
-        a {
-          font-size: 10px;
+        .dis-countsdasdas {
+          position: absolute;
+          top: 8px;
+          right: 0px;
+          z-index: -1;
+          width: 18px;
+          height: 15px;
+          text-decoration: double;
+          font-weight: bold;
+          font-size: 12px;
+          border-radius: 4px;
+          text-align: center;
+          color: var.$bg--white;
+          background-color: var.$bg--green;
         }
       }
     }
   }
 }
-
+.discount_span {
+  padding: 4px;
+  font-size: 13px;
+  border-radius: 4px;
+  text-align: center;
+  color: var.$bg--white;
+  background-color: var.$bg--origin;
+  font-weight: bold;
+}
 .loading {
   position: fixed;
   top: 0;
@@ -258,4 +270,21 @@ header {
   &.hidden {
     display: none;
   }
+}
+.check-btn {
+  background-color: red !important;
+  color: #ffffff !important;
+}
+.like-container {
+  display: inline-block;
+}
+
+.like-checkbox {
+  display: none;
+}
+
+.like-label {
+  font-size: 32px;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }

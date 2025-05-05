@@ -3,7 +3,10 @@
 main {
   .Корзина {
     @include mxn.font(64px, 150%, 700);
-    color: var.$bg--black;
+    color: var.$bg--white;
+    @media (max-width: 423px) {
+      @include mxn.font(54px, 150%, 700);
+    }
   }
   .karzinkaTap {
     display: flex;
@@ -12,15 +15,50 @@ main {
       display: flex;
       align-items: center;
       gap: 40px;
+      @media (max-width: 423px) {
+        flex-direction: column;
+        gap: 10px;
+      }
       a {
         @include mxn.font(12px, 150%, 400);
       }
       .twoBtn_a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        a {
-          color: #606060;
+        form {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .input__checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.2s;
+            &:checked {
+              background-color: var.$bg--green;
+              border-color: var.$bg--green;
+            }
+            &::after {
+              content: "ー";
+              color: white;
+              font-size: 14px;
+              position: absolute;
+              left: 2px;
+              top: -2px;
+              display: none;
+            }
+
+            &:checked::after {
+              display: block;
+            }
+          }
+          label {
+            color: #ffffff;
+            cursor: pointer;
+          }
         }
       }
       a {
@@ -30,74 +68,280 @@ main {
   }
   .karzinka_cards {
     margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 1005px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 80px;
+    }
     .karzinka_card_one {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 876px;
-      background-color: var.$bg--white;
-      border-radius: 4px;
-      padding: 0px 12px 8px 0px;
-      .karzinka_card_one_pg {
+      flex-direction: column;
+      gap: 25px;
+      height: 378px;
+      overflow-y: auto;
+      padding: 20px 18px 20px 0px;
+      @media (max-width: 701px) {
+        gap: 80px;
+      }
+      .karzinka_card_one_ {
         display: flex;
         align-items: center;
-        gap: 20px;
-        .karzinka_card_one_img {
-          position: relative;
-          .karzinka_card_one_img_check {
-            position: absolute;
-            top: -5px;
-            left: 13px;
-            transform: scale(1.6);
-            cursor: pointer;
-          }
+        gap: 210px;
+        max-width: 876px;
+        max-height: 72px;
+        background-color: var.$bg--white;
+        border-radius: 4px;
+        padding: 2px 12px 8px 2px;
+        transition: all 0.3s ease;
+        position: relative;
+        &:hover {
+          box-shadow: 4px 8px 16px 0px #ff663333;
+        }
+        @media (max-width: 701px) {
+          gap: 40px;
+        }
+        @media (max-width: 423px) {
+          gap: 0px;
+        }
+        .karzinka_card_one_pg {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .karzinka_card_one_img {
+            position: relative;
+            .karzinka_card_one_img_check {
+              appearance: none;
+              width: 20px;
+              height: 20px;
+              border: 2px solid #ccc;
+              border-radius: 4px;
+              background-color: white;
+              cursor: pointer;
+              position: absolute;
+              transition: background-color 0.2s;
+              &:checked {
+                background-color: var.$bg--green;
+                border-color: var.$bg--green;
+              }
+              &::after {
+                content: "✓";
+                color: white;
+                font-size: 14px;
+                position: absolute;
+                left: 4px;
+                top: -2px;
+                display: none;
+              }
 
-          img {
-            width: 80px;
-            height: 80px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 1px 2px 4px 0px #0000000c;
-            border-radius: 4px;
-            &:hover {
-              box-shadow: 1px 2px 4px 0px #0000001a;
+              &:checked::after {
+                display: block;
+              }
+            }
+
+            img {
+              width: 60px;
+              height: 50px;
+              transition: all 0.3s ease;
+              cursor: pointer;
+              box-shadow: 1px 2px 4px 0px #0000000c;
+              border-radius: 4px;
+              &:hover {
+                box-shadow: 1px 2px 4px 0px #0000001a;
+              }
+            }
+          }
+          .karzinka_card_one__a {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            p {
+              @media (max-width: 701px) {
+                font-size: 12px;
+              }
+              @media (max-width: 423px) {
+                width: 160px;
+              }
+              @media (max-width: 423px) {
+                width: 120px;
+                font-size: 8px;
+              }
             }
           }
         }
-        .karzinka_card_one__a {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-      }
-      .inc__dec_prise {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        .inc_dec {
-          background-color: var.$bg--green;
+        .inc__dec_prise {
           display: flex;
           align-items: center;
-          gap: 8px;
-          padding: 8px;
-          border-radius: 4px;
-          button {
-            width: 24px;
-            font-size: 24px;
+          justify-content: space-between;
+          gap: 24px;
+          .inc_dec {
             background-color: var.$bg--green;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            border-radius: 4px;
+            @media (max-width: 701px) {
+              position: absolute;
+              top: 71px;
+              right: 0px;
+            }
+
+            button {
+              width: 24px;
+              font-size: 24px;
+              background-color: var.$bg--green;
+            }
+            span {
+              color: var.$bg--white;
+              font-size: 16px;
+            }
           }
-          span {
-            color: var.$bg--white;
+          a {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 150%;
+            color: var.$bg--black;
+            @media (max-width: 701px) {
+              font-size: 12px;
+              width: 50px;
+            }
           }
         }
-        a {
-          font-weight: 700;
-          font-size: 18px;
-          line-height: 150%;
-          color: var.$bg--black;
+        .clickDelaete {
+          position: absolute;
+          right: -10px;
+          top: -20px;
+          img {
+            width: 30px;
+            &:active {
+              transform: scale(1.2);
+              transition: all 0.1s ease;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
+    .karzinka_card_twoMenu {
+      width: 272px;
+      background-color: var.$bg--color;
+      border-radius: 12px;
+      padding: 10px;
+      .karzinka_card_twoMenu_top {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        a {
+          @include mxn.font(16px, 150%, 400);
+          color: var.$bg--black;
+        }
+      }
+      .karzinka_card_twoMenu_text {
+        p {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 150%;
+          color: var.$bg--grey;
+          padding-top: 20px;
+        }
+      }
+      .karzinka_card_twoMenu_TavarPrise {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        a {
+          @include mxn.font(16px, 150%, 400);
+          color: var.$bg--grey;
+        }
+        p {
+          @include mxn.font(16px, 150%, 400);
+        }
+      }
+      .karzinka_card_twoMenu_discount {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        a {
+          @include mxn.font(16px, 150%, 400);
+          color: var.$bg--black;
+        }
+        b {
+          @include mxn.font(16px, 150%, 700);
+          color: var.$bg--origin;
+        }
+      }
+      .karzinka_card_twoMenu_Itog {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        a {
+          @include mxn.font(16px, 150%, 700);
+          color: var.$bg--grey;
+        }
+        h2 {
+          @include mxn.font(24px, 150%, 700);
+          color: var.$bg--black;
+        }
+      }
+      button {
+        margin-top: 10px;
+        padding: 20px 42px;
+        @include mxn.font(24px, 150%, 400);
+        color: var.$bg--origin;
+        background-color: #fcd5ba;
+      }
+    }
   }
+}
+//
+
+.switch {
+  display: inline-block;
+}
+.checkbox {
+  display: none;
+}
+
+.slider {
+  width: 46px;
+  height: 24px;
+  background-color: #70c05b;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border: 4px solid transparent;
+  transition: 0.3s;
+  box-shadow: 0 0 2px 0 rgb(0, 0, 0, 0.25) inset;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  transform: translateX(0px);
+  border-radius: 20px;
+  transition: 0.5s;
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider::before {
+  transform: translateX(20px);
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .slider {
+  background-color: #70c05b;
+}
+
+.checkbox:active ~ .slider::before {
+  transform: translate(0);
 }

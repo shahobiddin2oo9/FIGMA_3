@@ -18,15 +18,19 @@
       color: #414141;
       &:nth-child(1) {
         width: 46px;
+        color: white;
       }
       &:nth-child(2) {
         width: 46px;
+        color: white;
       }
       &:nth-child(3) {
         width: 125px;
+        color: white;
       }
       &:nth-child(4) {
         width: 735px;
+        color: white;
       }
     }
   }
@@ -36,6 +40,7 @@
     font-size: 24px;
     line-height: 150%;
     margin-top: 24px;
+    color: white;
   }
   .hed--nav {
     display: flex;
@@ -47,18 +52,28 @@
 
     a {
       @include mxn.font(400, 16px, 24px);
-      color: #414141;
+      color: white;
       text-decoration: none;
     }
     .shere {
       display: flex;
       align-items: center;
       gap: 7px;
+      img {
+        background-color: white;
+        width: 30px;
+        border-radius: 2px;
+      }
     }
     .love--tavar {
       display: flex;
       align-items: center;
       gap: 7px;
+      img {
+        background-color: white;
+        width: 30px;
+        border-radius: 2px;
+      }
     }
   }
 }
@@ -93,7 +108,7 @@
           align-items: center;
           justify-content: space-between;
           p {
-            color: #606060;
+            color: white;
             font-family: Rubik;
             font-weight: 400;
             font-size: 24px;
@@ -107,7 +122,7 @@
             font-size: 36px;
             line-height: 150%;
             letter-spacing: 0%;
-            color: #414141;
+            color: white;
           }
         }
         .a--two-information {
@@ -120,7 +135,7 @@
             font-size: 12px;
             line-height: 150%;
             letter-spacing: 0%;
-            color: #bfbfbf;
+            color: white;
           }
           .a--two-information-two-a {
             display: flex;
